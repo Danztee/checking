@@ -1,0 +1,13 @@
+export { default as Logo } from "./logo.png";
+export { default as Android } from "./Rectangle 131.png";
+export { default as Ios } from "./Rectangle 130.png";
+export { default as Illustration } from "./iluss.png";
+export { default as IllusCard } from "./smalpp-card.png";
+export { default as Airpods } from "./airpods.png";
+export { default as Iphone } from "./iphone.png";
+export { default as Laptop } from "./laptop.png";
+export { default as Suit } from "./suit.png";
+export { default as Headset } from "./headset.png";
+export { default as Sneakers } from "./sneekers1.png";
+export { default as Sneakers2 } from "./sneekers2.png";
+export { default as Sneakers3 } from "./sneekers3.png";
