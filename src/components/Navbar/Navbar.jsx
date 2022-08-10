@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar relative w-full">
-      <div className="container flex items-center justify-between">
+      <div className="container-b flex items-center justify-between w-full">
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
@@ -44,7 +44,7 @@ const Navbar = () => {
           </button>
           <input type="text" placeholder="Search" />
         </div>
-        <div className="nav-image">
+        <div className="nav-icons">
           <button onClick={handleProfile}>
             <i className="nav-icon">
               <CgProfile className="nav-img" />

@@ -8,7 +8,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <section className="footer w-full">
-      <footer className="container">
+      <footer className="container-b">
         <section className="footer-top">
           <div className="footer-colum">
             <h3>SHOP</h3>

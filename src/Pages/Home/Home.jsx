@@ -54,7 +54,7 @@ const Home = () => {
   };
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="container r">
+      <div className="container-b">
         <header>
           <div className="header-desc">
             <h1>
@@ -150,7 +150,7 @@ const Home = () => {
 
         {/* <!---section for top sales--> */}
         <h1 className="heardeing">Top sale of the month</h1>
-        <div className="w-full mb-32">
+        <div className="w-full mb-32 card">
           <section className="top-sales">
             <div className="top-sales-wright">
               <h1 className="top-sales-product-name">Headset MX6</h1>
