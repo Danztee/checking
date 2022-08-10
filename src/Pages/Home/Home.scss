@@ -4,7 +4,7 @@ header {
   justify-content: space-between;
   height: 596px;
   align-items: center;
-  //   padding: 0 3%;
+  padding: 0 5%;
 }
 header .header-desc {
   width: 536px;
@@ -49,10 +49,14 @@ header .header-desc .cta12 button {
   justify-content: space-evenly;
   transition: all 0.3s ease-in-out;
 }
-header .header-desc .cta12 button:hover {
-  width: 165px;
-  height: 63px;
+
+header .header-desc .cta12 .reg button:hover {
 }
+
+// header .header-desc .cta12 .reg button:hover {
+//   background-color: #1c00ff;
+//   color: hsl(0, 0%, 100%);
+// }
 header .header-desc .cta12 .exp {
   background: #1c00ff;
   font-weight: 500;
@@ -66,6 +70,12 @@ header .header-desc .cta12 .exp {
   svg {
     font-size: 30px;
   }
+
+  &:hover {
+    background-color: #ffffff;
+    color: #1c00ff;
+    border: 1px solid #1c00ff;
+  }
 }
 header .header-desc .cta12 .reg {
   background-color: #ffffff;
@@ -74,6 +84,11 @@ header .header-desc .cta12 .reg {
   font-size: 16px;
   line-height: 24px;
   color: #1c00ff;
+
+  &:hover {
+    background-color: #1c00ff;
+    color: #ffffff;
+  }
 }
 .header-ill {
   display: flex;
@@ -155,6 +170,7 @@ header .header-desc .cta12 .reg {
 
 .structure {
   margin-top: 60px;
+  //   padding: 0 5%;
   //   width: 963px;
   height: 134px;
   display: flex;
@@ -164,7 +180,7 @@ header .header-desc .cta12 .reg {
   background: #ffffff;
   box-shadow: 0px 8.93321px 40.1994px rgba(214, 214, 214, 0.25);
   border-radius: 17.8664px;
-  padding: 10px 0;
+  padding: 10px 5%;
 }
 .structure-cont {
   display: flex;
@@ -236,7 +252,7 @@ header .header-desc .cta12 .reg {
   align-items: center;
   box-shadow: 0px 0px 10px 10px #f9f9f9;
   border-radius: 50px;
-  padding: 0;
+  padding: 0 5%;
   position: relative;
 }
 
@@ -256,16 +272,19 @@ header .header-desc .cta12 .reg {
   align-items: center;
 }
 .top-slide {
-  margin-left: 20px;
-  margin-right: 20px;
   border-radius: 10px;
 }
 /* design for the top sales section*/
+
+.card {
+  padding: 0 5%;
+}
 .top-sales {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 50px 60px;
+  //   margin: 0 5%;
   width: 100%;
   height: 525px;
   background: #e5e8ff;
@@ -334,7 +353,7 @@ header .header-desc .cta12 .reg {
   .overlay {
     position: absolute;
     top: 0;
-    left: 20px;
+    // left: 20px;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
