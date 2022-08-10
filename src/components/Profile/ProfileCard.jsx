@@ -6,12 +6,15 @@ import { GiBackwardTime } from "react-icons/gi";
 import { FiSettings } from "react-icons/fi";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import "animate.css";
 
 import "./profile.scss";
 
 const ProfileCard = ({ closeHandler, className }) => {
   return (
-    <div className={`${className} profile-card absolute top-20 right-10`}>
+    <div
+      className={`${className} animate__animated animate__fadeIn profile-card absolute top-20 right-10`}
+    >
       <div className="profile-card-info flex justify-between">
         <div className="flex">
           <div className="profile-card-info-img w-12 h-12 mr-3">
