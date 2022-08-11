@@ -2,11 +2,26 @@ import React from "react";
 import { IoStarHalf } from "react-icons/io5";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
-const ProductCard = ({ img, name, price, rating, favorite, onClick }) => {
+import "./ProductCard.scss";
+
+const ProductCard = ({
+  img,
+  name,
+  price,
+  rating,
+  favorite,
+  onClick,
+  discount,
+}) => {
   return (
     <div className="product-card">
-      <div className="product-card-img">
+      <div className="product-card-img relative">
         <img src={img} alt="" />
+        {discount ? (
+          <div className="product-card-img-discount absolute top-3 right-3">
+            <span>-{discount}%</span>
+          </div>
+        ) : null}
       </div>
       <div className="product-card-desc px-3 mt-3">
         <div className="product-card-desc-left">
