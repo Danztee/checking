@@ -1,0 +1,35 @@
+.carousel {
+  padding: 0 5%;
+
+  h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .button-scroll {
+    width: 100px;
+    height: 80px;
+    padding: 30px 34px;
+    background: #ffffff;
+    color: #1c00ff;
+    box-shadow: 0px 15px 30px rgba(189, 189, 189, 0.25);
+    border-radius: 10px;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.51) 100%
+    );
+    border-radius: 12px;
+  }
+}
