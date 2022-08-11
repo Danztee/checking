@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { TbTruckDelivery } from "react-icons/tb";
 import { TiCreditCard } from "react-icons/ti";
+import { BiFilterAlt } from "react-icons/bi";
 import { Illustration, IllusCard, Headset } from "../../assets";
 import { slideData } from "../../data";
-import { Sneakers, Sneakers2, Sneakers3 } from "../../assets";
+import {
+  Sneakers,
+  Sneakers2,
+  Sneakers3,
+  Shoe,
+  Airpodmax,
+  Sound,
+  Trouser,
+  Wears,
+  SweatShirt,
+} from "../../assets";
 
 import "./Home.scss";
-import { ProductCard } from "../../components";
+import { ProductCard, Carousel } from "../../components";
 
 const Home = () => {
-  const [productData, setProductData] = useState([
+  const [popularProductData, setPopularProductData] = useState([
     {
       id: 1,
       name: "lorem ipsum",
@@ -37,10 +48,66 @@ const Home = () => {
       favorite: false,
     },
   ]);
-  const [favorite, setFavorite] = useState(false);
+
+  const [topDealsData, setTopDealsData] = useState([
+    {
+      id: 1,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: Airpodmax,
+      favorite: false,
+      discount: "45",
+    },
+    {
+      id: 2,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: Shoe,
+      favorite: false,
+      discount: "45",
+    },
+    {
+      id: 3,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: Sound,
+      favorite: false,
+      discount: "45",
+    },
+    {
+      id: 4,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: Trouser,
+      favorite: false,
+      discount: "45",
+    },
+    {
+      id: 5,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: Wears,
+      favorite: false,
+      discount: "45",
+    },
+    {
+      id: 6,
+      name: "lorem ipsum",
+      price: 6000,
+      rating: 4.5,
+      img: SweatShirt,
+      favorite: false,
+      discount: "45",
+    },
+  ]);
 
   const handleFavorite = (id) => {
-    const newData = productData.map((item) => {
+    const newData = popularProductData.map((item) => {
       if (item.id === id) {
         item.favorite = !item.favorite;
       } else {
@@ -48,10 +115,23 @@ const Home = () => {
       }
       return item;
     });
-    setProductData(newData);
+    setPopularProductData(newData);
 
     // setFavorite(!favorite);
   };
+
+  const handleFavoriteDeals = (id) => {
+    const newData = topDealsData.map((item) => {
+      if (item.id === id) {
+        item.favorite = !item.favorite;
+      } else {
+        // item.favorite = false;
+      }
+      return item;
+    });
+    setTopDealsData(newData);
+  };
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="container-b">
@@ -149,9 +229,10 @@ const Home = () => {
         </section>
 
         {/* <!---section for top sales--> */}
-        <h1 className="heardeing">Top sale of the month</h1>
-        <div className="w-full mb-32 card">
-          <section className="top-sales">
+        <section className="top-sales">
+          <h1 className="header">Top sale of the month</h1>
+
+          <div className="w-full mb-32 card">
             <div className="top-sales-wright">
               <h1 className="top-sales-product-name">Headset MX6</h1>
               <span>
@@ -163,21 +244,68 @@ const Home = () => {
               <button className="shop-naww">Shop now</button>
             </div>
             <img src={Headset} alt="" />
-          </section>
+          </div>
+        </section>
 
-          <h1 className="heardeing">Popular</h1>
-          <section className="img-display">
-            <div className="row">
-              {productData.map((product, index) => (
-                <ProductCard
-                  key={index}
-                  onClick={() => handleFavorite(product.id)}
-                  {...product}
-                />
-              ))}
+        <section className="popular">
+          <h1 className="header mb-16">Popular</h1>
+          <div className="pop">
+            {popularProductData.map((product, index) => (
+              <ProductCard
+                key={index}
+                onClick={() => handleFavorite(product.id)}
+                {...product}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* <!--section top deals--> */}
+        <section className="top">
+          <h1 class="header mb-16">Top Deals</h1>
+          <div className="w-full flex items-end links">
+            <Link to="/" className="text-right w-full">
+              See all
+            </Link>
+          </div>
+          <div className="prod w-full mt-12">
+            {topDealsData.map((product, index) => (
+              <ProductCard
+                key={index}
+                onClick={() => handleFavoriteDeals(product.id)}
+                {...product}
+              />
+            ))}
+          </div>
+        </section>
+        {/* top deals section ends here */}
+
+        {/* Nee product section starts here */}
+        <section className="top">
+          <h1 className="header mb-16">New Products</h1>
+          <div className="w-full flex justify-between links">
+            <div className="flex items-center">
+              Filter
+              <BiFilterAlt />
             </div>
-          </section>
-        </div>
+            <Link to="/" className="text-right w-full">
+              See all
+            </Link>
+          </div>
+          <div className="prod w-full mt-12">
+            {topDealsData.map((product, index) => (
+              <ProductCard
+                key={index}
+                onClick={() => handleFavoriteDeals(product.id)}
+                {...product}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="brands">
+          <Carousel />
+        </section>
       </div>
     </div>
   );
