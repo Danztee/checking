@@ -45,10 +45,16 @@ const Navbar = () => {
           <input type="text" placeholder="Search" />
         </div>
         <div className="nav-icons">
-          <button onClick={handleProfile}>
+          <button onClick={handleProfile} className="relative">
             <i className="nav-icon">
               <CgProfile className="nav-img" />
             </i>
+            {profile && (
+              <ProfileCard
+                closeHandler={handleProfile}
+                className={`transition-all ease-in-out duration-500`}
+              />
+            )}
           </button>
           <Link to="/">
             <i className="nav-icon">
@@ -61,12 +67,6 @@ const Navbar = () => {
             </i>
           </Link>
         </div>
-        {profile && (
-          <ProfileCard
-            closeHandler={handleProfile}
-            className={`transition-all ease-in-out duration-500`}
-          />
-        )}
       </div>
     </nav>
   );
