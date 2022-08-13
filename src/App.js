@@ -1,17 +1,32 @@
 import { Navbar, Footer } from "./components";
-import { Home } from "./Pages";
+import { Home, Auth } from "./Pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
+  const pathName = window.location.pathname;
+  console.log(pathName);
+
   return (
     <BrowserRouter>
       <div className="App">
         <div className="">
-          <Navbar />
+          {pathName !== "/login" && pathName !== "/register" ? (
+            <Navbar />
+          ) : null}
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route path="/login" element={<SignIn />} /> */}
+            <Route element={<Auth />}>
+              <Route path="/login" />
+              <Route path="/register" />
+            </Route>
+            {["/login", "/register"].map((path) => (
+              <Route path={path} element={<Auth />} key={path} />
+            ))}
           </Routes>
-          <Footer />
+          {pathName !== "/login" && pathName !== "/register" ? (
+            <Footer />
+          ) : null}
         </div>
       </div>
     </BrowserRouter>
