@@ -242,32 +242,28 @@ header .header-desc .cta12 .reg {
 }
 
 .slide {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  height: 200px;
-  align-items: center;
-  border-radius: 50px;
-  padding: 0 5%;
-  position: relative;
+  // margin-top: 40px;
+  // margin-bottom: 40px;
+  // display: flex;
+  // width: 100%;
+  // justify-content: space-between;
+  // height: 200px;
+  // align-items: center;
+  // border-radius: 50px;
+  // padding: 0 5%;
+  // position: relative;
 }
 
 .slide img {
   cursor: pointer;
 }
 .slide .product {
-  width: 960px;
-  height: 170px;
-  overflow-x: hidden;
+  // // width: 960px;
+  // height: 170px;
+  // overflow-x: hidden;
 }
 .product-slide {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  // overflow-x: hidden;
 }
 .top-slide {
   border-radius: 10px;
@@ -445,4 +441,106 @@ header .header-desc .cta12 .reg {
   grid-row-gap: 24px;
   align-items: center;
   justify-content: center;
+}
+
+/*  become a sales person */
+.seller {
+  padding: 0 5%;
+  margin-bottom: 120px;
+
+  &-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px 60px;
+    height: 525px;
+    background: #f2f3ff;
+    box-shadow: 0px 131px 53px rgba(189, 189, 189, 0.01),
+      0px 74px 44px rgba(189, 189, 189, 0.03),
+      0px 33px 33px rgba(189, 189, 189, 0.04),
+      0px 8px 18px rgba(189, 189, 189, 0.05),
+      0px 0px 0px rgba(189, 189, 189, 0.05);
+    border-radius: 30px;
+
+    &-text {
+      flex: 1;
+      h1 {
+        margin-bottom: 16px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 44px;
+        /* or 138% */
+
+        color: #1c00ff;
+      }
+
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        /* or 156% */
+
+        text-transform: capitalize;
+
+        color: #000000;
+      }
+
+      a {
+        button {
+          margin-top: 44px;
+          border: none;
+          width: 157px;
+          height: 52px;
+          background: #1c00ff;
+          border-radius: 5px;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &-image {
+      flex: 1;
+    }
+  }
+}
+.sele-product .sele-product-wright {
+  display: flex;
+  flex-direction: column;
+  width: 503px;
+  height: 100%;
+  justify-content: space-around;
+}
+.sele-product .sele-product-wright h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #1c00ff;
+}
+.sele-product .sele-product-wright span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #000000;
+}
+.sele-product .sele-product-wright button {
+  border: none;
+  width: 157px;
+  height: 52px;
+  background: #1c00ff;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+.sele-product .sele-product-wright button:hover {
+  background-color: #1e06d3;
 }
