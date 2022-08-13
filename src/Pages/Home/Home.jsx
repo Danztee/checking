@@ -1,10 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { TbTruckDelivery } from "react-icons/tb";
 import { TiCreditCard } from "react-icons/ti";
 import { BiFilterAlt } from "react-icons/bi";
-import { Illustration, IllusCard, Headset } from "../../assets";
+import { Illustration, IllusCard, Headset, BlackMan } from "../../assets";
 import { slideData } from "../../data";
 import {
   Sneakers,
@@ -19,7 +19,12 @@ import {
 } from "../../assets";
 
 import "./Home.scss";
-import { ProductCard, Carousel } from "../../components";
+import {
+  ProductCard,
+  Carousel,
+  CategoryCarousel,
+  TopSeller,
+} from "../../components";
 
 const Home = () => {
   const [popularProductData, setPopularProductData] = useState([
@@ -148,7 +153,7 @@ const Home = () => {
                 Explore <FiArrowRightCircle />
               </button>
               <button className="reg">
-                <Link to="/">Register</Link>
+                <Link to="/register">Register</Link>
               </button>
             </div>
           </div>
@@ -209,28 +214,12 @@ const Home = () => {
         </section>
 
         <section className="slide">
-          <img src="images/arow-right.png" alt="" className="moveleft" />
-          <div className="product">
-            <div className="product-slide flex justify-between">
-              {slideData.map((slide, index) => (
-                <div key={index} className="product-slide-cont relative">
-                  <Link to="/">
-                    <img src={slide.img} alt="" className="img top-slide" />
-                  </Link>
-                  {/* //slide up category name and overlay */}
-                  <div className="overlay text-center absolute h-full ">
-                    <h1>{slide.category}</h1>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <img src="images/aro-left.png" alt="" className="moveright" />
+          <CategoryCarousel />
         </section>
 
         {/* <!---section for top sales--> */}
         <section className="top-sales">
-          <h1 className="header">Top sale of the month</h1>
+          <h1 className="header mb-16">Top sale of the month</h1>
 
           <div className="w-full mb-32 card">
             <div className="top-sales-wright">
@@ -262,7 +251,7 @@ const Home = () => {
 
         {/* <!--section top deals--> */}
         <section className="top">
-          <h1 class="header mb-16">Top Deals</h1>
+          <h1 className="header mb-16">Top Deals</h1>
           <div className="w-full flex items-end links">
             <Link to="/" className="text-right w-full">
               See all
@@ -303,8 +292,36 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="brands">
+        {/* Brands Carousel */}
+        <section className="brands mb-32">
           <Carousel />
+        </section>
+
+        <section className="seller">
+          <div className="seller-container">
+            <div className="seller-container-text">
+              <h1>
+                Be our seller today and elevate your business to next level
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas
+                accumsan in lectus adipiscing. Mollis euismod phasellus aliquam,
+                egestas scelerisque. Nulla diam malesuada sapien mattis non
+                curabitur.
+              </p>
+              <a href="/wicart-selsdashbord/Vendor's registration/Admin-details.html">
+                <button className="Register">Register</button>
+              </a>
+            </div>
+            <div className="seller-container-image">
+              <img src={BlackMan} alt="" className="object-cover" />
+            </div>
+          </div>
+        </section>
+
+        {/* Top Sellers */}
+        <section className="top-seller mb-28 flex items-center justify-center">
+          <TopSeller />
         </section>
       </div>
     </div>
