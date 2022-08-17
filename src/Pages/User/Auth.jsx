@@ -127,20 +127,6 @@ const FormContainer = () => {
 };
 
 const Auth = () => {
-  // let number = document.getElementById("number");
-  // let counter = 0;
-
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     if (counter === 65) {
-  //       clearInterval();
-  //     } else {
-  //       counter += 1;
-  //       number.innerHTML = counter + "%";
-  //     }
-  //   }, 22);
-  // }, []);
-
   return (
     <div className="auth">
       <div className="container-b">
@@ -153,9 +139,9 @@ const Auth = () => {
               <h1 className="capitalize z-50">
                 for the <br /> <span>ecommerce</span> you <br /> don't know yet.
               </h1>
-              <div className="circle absolute z-10"></div>
+              <div className="circle fixed"></div>
             </div>
-            <div className="hero-img">
+            <div className="hero-img relative">
               <img src={AuthHero} alt="" />
               <div className="all">
                 <div className="skill">
@@ -198,7 +184,7 @@ const Auth = () => {
               </div>
             </div>
           </div>
-          <div className="form">
+          <div className="form flex justify-center">
             <FormContainer />
           </div>
         </div>

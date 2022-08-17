@@ -272,6 +272,69 @@ header .header-desc .cta12 .reg {
 
 .top-sales {
   padding: 0 5%;
+
+  .image {
+    position: relative;
+    width: 40%;
+    height: 100%;
+
+    img {
+      width: 400px;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes top-sale-img {
+  0% {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+  }
+}
+
+@keyframes top-sale-img-two {
+  0% {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+  }
+}
+
+@keyframes move_right {
+  0% {
+    transform: translateX(-20%);
+    color: black;
+  }
+  50% {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes move_righttwo {
+  0% {
+    transform: translateX(-20%);
+    color: black;
+  }
+  50% {
+    transform: translateX(20%);
+  }
+}
+
+.move-right {
+  animation: move_right 1s ease-in-out;
+}
+
+.move-rightt {
+  animation: move_righttwo 1s ease-in-out;
+}
+
+.top-sale-img {
+  animation: top-sale-img 1s ease-in-out;
+}
+
+.top-sale-img-2 {
+  animation: top-sale-img-two 1s ease-in-out;
 }
 
 .card {

@@ -1,12 +1,17 @@
 .auth {
   background-color: #f3f1fd;
+  padding: 74px 80px;
+
+  @media screen and (max-width: 1188px) {
+    padding: 60px 50px;
+  }
   .text-bg {
-    padding: 74px 120px;
     flex: 1;
     .logo {
     }
 
     .text {
+      z-index: 1000;
       h1 {
         font-family: "Poppins";
         font-style: normal;
@@ -14,11 +19,12 @@
         font-size: 49.3333px;
         line-height: 74px;
         color: #000000;
+        z-index: 1000;
 
-        @media screen and (max-width: 1048px) {
-          font-size: 36px;
-          line-height: 60px;
-        }
+        // @media screen and (max-width: 1048px) {
+        //   font-size: 36px;
+        //   line-height: 60px;
+        // }
 
         > span {
           color: #1c00ff;
@@ -31,17 +37,29 @@
         background-repeat: no-repeat;
         width: 130px;
         height: 130px;
+        top: 280px;
+        left: 470px;
 
-        top: 140px;
-        right: -40px;
+        z-index: 1;
 
-        @media screen and (max-width: 1200px) {
-          right: -50px;
+        ::before {
+          background: url(../../assets/Ellipse1.png);
         }
 
-        @media screen and (max-width: 1500px) {
-          right: -80px;
+        @media screen and (max-width: 1188px) {
+          display: none;
         }
+
+        // top: 140px;
+        // right: -40px;
+
+        // @media screen and (max-width: 1200px) {
+        //   right: -50px;
+        // }
+
+        // @media screen and (max-width: 1500px) {
+        //   right: -80px;
+        // }
       }
     }
   }
@@ -227,6 +245,15 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    circle {
+      fill: none;
+      stroke: url(#GradientColor);
+      stroke-width: 20px;
+      stroke-dasharray: 427;
+      stroke-dashoffset: 427;
+      animation: anim 2s linear forwards;
+    }
   }
 }
 .outer {
@@ -258,14 +285,6 @@
   position: absolute;
   top: 10px;
 }
-circle {
-  fill: none;
-  stroke: url(#GradientColor);
-  stroke-width: 20px;
-  stroke-dasharray: 427;
-  stroke-dashoffset: 427;
-  animation: anim 2s linear forwards;
-}
 
 @keyframes anim {
   100% {
@@ -277,6 +296,11 @@ circle {
   position: absolute;
   left: 300px;
   bottom: -50px;
+
+  @media screen and (max-width: 1062px) {
+    left: 200px;
+    bottom: -90px;
+  }
 }
 
 @media only screen and (max-width: 500px) {

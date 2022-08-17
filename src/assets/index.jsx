@@ -23,3 +23,6 @@ export { default as Profile3 } from "./profile 3.png";
 export { default as BlackMan } from "./black-businessman.png";
 export { default as Ellipse } from "./Ellipse1.png";
 export { default as AuthHero } from "./authhero.png";
+export { default as Iphone11 } from "./iphone11.png";
+export { default as Bag } from "./bag.png";
+export { default as Nike } from "./nike.png";

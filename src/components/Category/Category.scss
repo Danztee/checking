@@ -1,0 +1,95 @@
+.categories-cont {
+  width: 500px;
+  height: 180px;
+  padding: 20px;
+  box-shadow: 0px 10px 21px rgba(218, 215, 242, 0.25);
+  overflow-y: scroll;
+}
+.categories-cont::-webkit-scrollbar {
+  width: 40px;
+}
+.categories-cont::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 200px;
+  border: 18px solid #fcfcfd;
+}
+.categories-cont::-webkit-scrollbar-thumb {
+  background-color: #1e06d3;
+  border-radius: 1000px;
+  border: 19px solid #fcfcfd;
+}
+.cartgos {
+  //   position: absolute;
+  background-color: #fcfcfd;
+  z-index: 1000;
+  //   top: 110px;
+  //   right: 200px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px;
+  transform: translateY(-50%);
+  //   opacity: 0;
+  transition: 3s ease-in-out;
+  //   display: none;
+  animation: 2s cartgos ease-in-out;
+}
+@keyframes cartgos {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+.li-cart:hover .cartgos {
+  transform: translateY(0%);
+  opacity: 1;
+  display: block;
+}
+
+.cartgos::before {
+  background-color: #fcfcfd;
+  z-index: 10;
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -25px;
+  left: 70px;
+}
+.cart-rwo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 55px;
+  justify-content: space-between;
+}
+.cart-rwo label svg {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.cart-rwo label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  color: #1c00ff;
+}
+.cartgos .cart-rwo a label {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  cursor: pointer;
+}
+.cart-rwo a label span {
+  font-size: 19px;
+  text-transform: capitalize;
+  color: #1e06d3;
+  font-weight: 500;
+}

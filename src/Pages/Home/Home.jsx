@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { TbTruckDelivery } from "react-icons/tb";
 import { TiCreditCard } from "react-icons/ti";
 import { BiFilterAlt } from "react-icons/bi";
-import { Illustration, IllusCard, Headset, BlackMan } from "../../assets";
-import { slideData } from "../../data";
 import {
   Sneakers,
   Sneakers2,
@@ -16,6 +14,13 @@ import {
   Trouser,
   Wears,
   SweatShirt,
+  Illustration,
+  IllusCard,
+  Headset,
+  BlackMan,
+  Nike,
+  Bag,
+  Iphone11,
 } from "../../assets";
 
 import "./Home.scss";
@@ -25,6 +30,7 @@ import {
   CategoryCarousel,
   TopSeller,
 } from "../../components";
+import "animate.css";
 
 const Home = () => {
   const [popularProductData, setPopularProductData] = useState([
@@ -121,8 +127,6 @@ const Home = () => {
       return item;
     });
     setPopularProductData(newData);
-
-    // setFavorite(!favorite);
   };
 
   const handleFavoriteDeals = (id) => {
@@ -136,6 +140,46 @@ const Home = () => {
     });
     setTopDealsData(newData);
   };
+
+  const prod = [
+    {
+      id: 1,
+      name: "Headset MX6",
+      price: 6000,
+      image: Headset,
+    },
+    {
+      id: 2,
+      name: "Iphone 11",
+      price: 300000,
+      image: Iphone11,
+    },
+    {
+      id: 3,
+      name: "Hand bag",
+      price: 20000,
+      image: Bag,
+    },
+    {
+      id: 4,
+      name: "Nike air",
+      price: 20000,
+      image: Nike,
+    },
+  ];
+
+  const [prodDataSecond, setProdDataSecond] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (prodDataSecond === prod.length - 1) {
+        setProdDataSecond(0);
+      } else {
+        setProdDataSecond(prodDataSecond + 1);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [prodDataSecond, prod.length]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -223,16 +267,48 @@ const Home = () => {
 
           <div className="w-full mb-32 card">
             <div className="top-sales-wright">
-              <h1 className="top-sales-product-name">Headset MX6</h1>
+              <h1
+                className={`top-sales-product-name ${
+                  // if prodDataSecond changes, change classname
+                  prodDataSecond === 0
+                    ? "move-right"
+                    : prodDataSecond === 1
+                    ? "move-rightt"
+                    : prodDataSecond === 2
+                    ? "move-right"
+                    : prodDataSecond === 3
+                    ? "move-rightt"
+                    : ""
+                }`}
+              >
+                {prod[prodDataSecond].name}
+              </h1>
               <span>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit
                 bibendum justo, consectetur libero consectetur at. Augue mauris
                 eu tortor bibendum in nisi, amet nibh.
               </span>
-              <h2>&#8358; 6,000</h2>
+              <h2>&#8358; {prod[prodDataSecond].price}</h2>
               <button className="shop-naww">Shop now</button>
             </div>
-            <img src={Headset} alt="" />
+            <div className="image">
+              <img
+                src={prod[prodDataSecond].image}
+                alt=""
+                className={`${
+                  // if prodDataSecond changes, change classname
+                  prodDataSecond === 0
+                    ? "top-sale-img"
+                    : prodDataSecond === 1
+                    ? "top-sale-img-2"
+                    : prodDataSecond === 2
+                    ? "top-sale-img"
+                    : prodDataSecond === 3
+                    ? "top-sale-img-2"
+                    : ""
+                }`}
+              />
+            </div>
           </div>
         </section>
 
@@ -297,7 +373,7 @@ const Home = () => {
           <Carousel />
         </section>
 
-        <section className="seller">
+        <section className="seller relative">
           <div className="seller-container">
             <div className="seller-container-text">
               <h1>
@@ -320,7 +396,7 @@ const Home = () => {
         </section>
 
         {/* Top Sellers */}
-        <section className="top-seller mb-28 flex items-center justify-center">
+        <section className="top-seller mb-28 flex items-center justify-center relative">
           <TopSeller />
         </section>
       </div>

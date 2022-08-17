@@ -14,20 +14,19 @@ nav {
 .navbar {
   width: 100%;
 }
-nav ul {
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-  list-style: none;
-}
-nav ul li {
-  color: black;
-  font-size: 18px;
-}
-nav ul .nav-link-hover,
-nav ul li:hover {
-  color: #1c00ff;
-  font-size: 20px;
+nav {
+  ul {
+    width: 40%;
+    list-style: none;
+    li {
+      color: black;
+      font-size: 18px;
+
+      &:hover {
+        color: #1c00ff;
+      }
+    }
+  }
 }
 .search {
   position: relative;
