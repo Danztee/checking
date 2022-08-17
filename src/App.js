@@ -1,33 +1,26 @@
 import { Navbar, Footer } from "./components";
-import { Home, Auth } from "./Pages";
+import { Home, Auth, ProductPage } from "./Pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
-  const pathName = window.location.pathname;
-  console.log(pathName);
-
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="">
-          {pathName !== "/login" && pathName !== "/register" ? (
-            <Navbar />
-          ) : null}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/login" element={<SignIn />} /> */}
-            <Route element={<Auth />}>
-              <Route path="/login" />
-              <Route path="/register" />
-            </Route>
-            {["/login", "/register"].map((path) => (
-              <Route path={path} element={<Auth />} key={path} />
-            ))}
-          </Routes>
-          {pathName !== "/login" && pathName !== "/register" ? (
-            <Footer />
-          ) : null}
-        </div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/login" element={<SignIn />} /> */}
+          <Route element={<Auth />}>
+            <Route path="/login" />
+            <Route path="/register" />
+          </Route>
+          {["/login", "/register"].map((path) => (
+            <Route path={path} element={<Auth />} key={path} />
+          ))}
+          <Route path="/products" element={<ProductPage />} />
+        </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
