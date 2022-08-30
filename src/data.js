@@ -10,6 +10,15 @@ import {
   Profile2,
   Profile3,
 } from "./assets";
+import { BsPhone } from "react-icons/bs";
+import { MdElectricalServices } from "react-icons/md";
+import { RiComputerLine } from "react-icons/ri";
+import { HiArrowsExpand } from "react-icons/hi";
+import { IoShirtOutline } from "react-icons/io5";
+import { IoWomanOutline } from "react-icons/io5";
+import { MdOutlineSportsHandball } from "react-icons/md";
+import { TbMoodKid } from "react-icons/tb";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const slideData = [
   {
@@ -159,5 +168,53 @@ export const topSellersData = [
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit",
     post: 300,
+  },
+];
+
+export const navLinkData = [
+  {
+    name: "Phone and Gadgets",
+    link: "/",
+    icon: BsPhone,
+  },
+  {
+    name: "Electronics",
+    link: "/",
+    icon: MdElectricalServices,
+  },
+  {
+    name: "Computing",
+    link: "/",
+    icon: RiComputerLine,
+  },
+  {
+    name: "Accessories",
+    link: "/",
+    icon: HiArrowsExpand,
+  },
+  {
+    name: "Gents",
+    link: "/",
+    icon: IoShirtOutline,
+  },
+  {
+    name: "Ladies",
+    link: "/",
+    icon: IoWomanOutline,
+  },
+  {
+    name: "Sports",
+    link: "/",
+    icon: MdOutlineSportsHandball,
+  },
+  {
+    name: "Kids",
+    link: "/",
+    icon: TbMoodKid,
+  },
+  {
+    name: "Others",
+    link: "/",
+    icon: AiOutlineArrowRight,
   },
 ];
