@@ -1,5 +1,11 @@
 import { Navbar, Footer } from "./components";
-import { Home, Auth, ProductPage } from "./Pages";
+import {
+  Home,
+  Auth,
+  ProductPage,
+  ProductCategory,
+  ProductDetails,
+} from "./Pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -19,6 +25,8 @@ function App() {
             <Route path={path} element={<Auth />} key={path} />
           ))}
           <Route path="/products" element={<ProductPage />} />
+          <Route path="/products/:category" element={<ProductCategory />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </div>
