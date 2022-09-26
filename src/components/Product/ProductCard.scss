@@ -1,17 +1,14 @@
 .product-card {
-  width: 358.48px;
   height: 460.92px;
   background: #ffffff;
   box-shadow: 0px 7.27871px 20.9263px rgba(189, 189, 189, 0.25);
   border-radius: 10px;
 
   @media screen and (max-width: 1200px) {
-    width: 340px;
     height: auto;
   }
 
   @media screen and (max-width: 1060px) {
-    width: 300px;
     height: auto;
   }
 
@@ -141,6 +138,67 @@
 
       color: #1c00ff;
       margin-bottom: 10px;
+    }
+  }
+}
+
+.product-card-mobile {
+  height: 202px;
+  width: 146.57px;
+  background: #ffffff;
+  box-shadow: 0px 5.46784px 27.3392px #ededed;
+  border-radius: 6.31757px;
+
+  .product-card-img {
+    width: 100%;
+    height: 106px;
+    background: #f2f3ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-discount {
+      width: 48.12px;
+      height: 25px;
+
+      font-size: 11.25px;
+      line-height: 17px;
+      text-align: center;
+    }
+  }
+
+  &-desc {
+    width: 100%;
+
+    &-top {
+      h1 {
+        width: 100%;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15.1622px;
+        line-height: 18px;
+
+        color: #000000;
+      }
+    }
+  }
+
+  .product-card-price {
+    h2 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17.7356px;
+      line-height: 21px;
+
+      color: #1c00ff;
     }
   }
 }

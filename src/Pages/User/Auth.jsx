@@ -1,63 +1,80 @@
-// import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Logo, AuthHero } from "../../assets";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { register, login } from "../../actions/userAction";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { useDispatch, useSelector } from "react-redux";
 import "animate.css";
 
-const bgSignUp = {
-  width: "119.52px",
-  height: "38.29px",
-  backgroundColor: "#3f51dc",
-  borderRadius: "43px",
-  right: "3px",
-  // transition: "all 0.3s ease-in-out",
-};
-
-const bgSignIn = {
-  width: "119.52px",
-  height: "38.29px",
-  backgroundColor: "#3f51dc",
-  borderRadius: "43px",
-  left: "3px",
-  // transition: "all 0.3s ease-in-out",
-};
-
 const FormContainer = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const pathName = useLocation().pathname;
-  console.log(pathName);
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const {
+    loading: loadingLogin,
+    error: errorLogin,
+    userInfo: userInfoLogin,
+  } = userLogin;
+
+  const userRegister = useSelector((state) => state.userRegister);
+  const { loading, error, userInfo } = userRegister;
+
+  const redirect = window.location.search
+    ? window.location.search.split("=")[1]
+    : "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [userInfo, navigate, redirect]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (name && email && password) {
+      dispatch(register(name, email, password));
+    }
+  };
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+
+    if (email && password) {
+      dispatch(login(email, password));
+    }
+  };
 
   return (
     <div className="form-container">
-      <div className="form-container__nav flex px-8 justify-between relative">
+      <div className="form-container__nav">
         <div
-          className={`absolute bg-btn ${
-            pathName === "/register"
-              ? "animate__animated animate__fadeInLeft"
-              : ""
-          }`}
-          style={pathName === "/register" ? bgSignUp : null}
-        ></div>
-        <div
-          className={`absolute bg-btn ${
-            pathName === "/login"
-              ? "animate__animated animate__fadeInRight"
-              : ""
-          }`}
-          style={pathName === "/login" ? bgSignIn : null}
-        ></div>
-        <div
-          className={`form-container__nav-item z-50 ${
-            pathName === "/login" ? "text-white" : ""
-          }`}
+          className={`${
+            pathName === "/login" ? "active" : ""
+          } flex justify-between relative py-2.5 px-6`}
         >
-          <Link to="/login">Sign In</Link>
-        </div>
-        <div
-          className={`form-container__nav-item z-50 ${
-            pathName === "/register" ? "text-white" : ""
-          }`}
-        >
-          <Link to="/register">Sign Up</Link>
+          <div className="bg-blue absolute"></div>
+          <Link to="/register" className="z-50">
+            <div
+              className={`sign-up ${
+                pathName === "/register" ? "text-white" : ""
+              }`}
+            >
+              <p>Sign Up</p>
+            </div>
+          </Link>
+          <Link to="/login" className="z-50">
+            <div className="sign-in" style={{}}>
+              <p>Sign In</p>
+            </div>
+          </Link>
         </div>
       </div>
       {pathName === "/register" && (
@@ -67,25 +84,42 @@ const FormContainer = () => {
               <p>There are great offers waiting for you!!</p>
             </div>
             <div className="form-container__form-body">
-              <div className="form-container__form-body-item mb-7">
-                <input type="text" placeholder="Fullname" />
-              </div>
-              <div className="form-container__form-body-item mb-7">
-                <input type="text" placeholder="Email" />
-              </div>
-              <div className="form-container__form-body-item mb-7">
-                <input type="password" placeholder="Password" />
-              </div>
-              <div className="form-container__form-body-item">
-                <button className="sign">Register Account</button>
-              </div>
+              <form onSubmit={submitHandler}>
+                <div className="form-container__form-body-item mb-7">
+                  <input
+                    type="text"
+                    placeholder="Fullname"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="form-container__form-body-item mb-7">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form-container__form-body-item mb-7">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="form-container__form-body-item">
+                  <button className="sign">Register Account</button>
+                </div>
+              </form>
               <div className="line relative my-7">
                 <div className="line-item absolute">or</div>
               </div>
               <div className="form-container__form-body-item">
                 <button className="google flex items-center text-center justify-center gap-3">
                   <FcGoogle />
-                  Register with Google
+                  Google
                 </button>
               </div>
             </div>
@@ -100,15 +134,17 @@ const FormContainer = () => {
               <p>There are great offers waiting for you!!</p>
             </div>
             <div className="form-container__form-body">
-              <div className="form-container__form-body-item mb-7">
-                <input type="text" placeholder="Email" />
-              </div>
-              <div className="form-container__form-body-item mb-14">
-                <input type="password" placeholder="Password" />
-              </div>
-              <div className="form-container__form-body-item">
-                <button className="sign">Sign In</button>
-              </div>
+              <form onSubmit={loginHandler}>
+                <div className="form-container__form-body-item mb-7">
+                  <input type="text" placeholder="Email" />
+                </div>
+                <div className="form-container__form-body-item mb-14">
+                  <input type="password" placeholder="Password" />
+                </div>
+                <div className="form-container__form-body-item">
+                  <button className="sign">Sign In</button>
+                </div>
+              </form>
               <div className="line relative my-7">
                 <div className="line-item absolute">or</div>
               </div>
@@ -131,7 +167,7 @@ const Auth = () => {
     <div className="auth">
       <div className="container-b">
         <div className="flex">
-          <div className="text-bg">
+          <div className="text-bg hidden lg:block">
             <div className="logo mb-8">
               <img src={Logo} alt="" />
             </div>

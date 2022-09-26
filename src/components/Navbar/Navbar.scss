@@ -1,20 +1,25 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 2%;
-  // width: 1134px;
-  padding: 1.5% 5%;
+  align-items: center; // width: 1134px;
+  height: minmax(60px, 84px);
+  box-shadow: 0px 4px 8px rgba(200, 200, 200, 0.25);
+  padding-inline: 18px;
+  padding-block: 18px;
 
-  @media (max-width: 1024px) {
-    padding: 1.5% 3%;
+  .icon {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
-}
 
-.navbar {
-  width: 100%;
-}
-nav {
+  @media (min-width: 1024px) {
+    //   padding: 1.5% 3%;
+    padding-inline: 80px;
+    padding-block: 20px;
+  }
+
   ul {
     width: 40%;
     list-style: none;
@@ -27,42 +32,50 @@ nav {
       }
     }
   }
-}
-.search {
-  position: relative;
-  padding: 15px 18px;
-  width: 205px;
-  height: 50px;
-  border: 1px solid #b4b4b4;
-  border-radius: 10px;
-}
-.search input {
-  width: 90%;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #a3a3a3;
-  border: none;
-  outline: none;
-}
 
-.search input::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #a3a3a3;
-  align-items: center;
-  line-height: 24px;
-}
+  .logo-wrapper {
+    @media screen and (max-width: 1024px) {
+      width: 47.25px;
+      height: 34px;
+    }
+  }
 
-.search button {
-  background-color: transparent;
-  border: none;
-
-  svg {
+  .search {
+    position: relative;
+    padding: 15px 18px;
+    width: 205px;
+    height: 50px;
+    border: 1px solid #b4b4b4;
+    border-radius: 10px;
+  }
+  .search input {
+    width: 90%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
     color: #a3a3a3;
-    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+
+  .search input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #a3a3a3;
+    align-items: center;
+    line-height: 24px;
+  }
+
+  .search button {
+    background-color: transparent;
+    border: none;
+
+    svg {
+      color: #a3a3a3;
+      font-size: 20px;
+    }
   }
 }
 
@@ -77,6 +90,10 @@ nav {
       font-size: 24px;
       color: #000;
     }
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 64px;
   }
 }
 

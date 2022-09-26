@@ -13,6 +13,13 @@ const Footer = () => {
       {pathname !== "/login" && pathname !== "/register" ? (
         <section className="footer w-full">
           <footer className="container-b">
+            <div className="subscribe mb-16">
+              <h1>Subscribe to get latest stories</h1>
+              <div className="flex items-center">
+                <input type="text" placeholder="Your Email address" />
+                <button className="subscribe-btn">Subscribe</button>
+              </div>
+            </div>
             <section className="footer-top">
               <div className="footer-colum">
                 <h3>SHOP</h3>
@@ -121,11 +128,7 @@ const Footer = () => {
                   <FaLinkedin />
                 </Link>
               </div>
-              <div className="subscribe">
-                <h1>Subscribe to get latest stories</h1>
-                <input type="text" placeholder="Your Email address" />
-                <button className="subscribe-btn">Subscribe</button>
-              </div>
+
               <div className="app-down">
                 <h1>Download Wicart</h1>
                 <Link to="/" className="mb-3">

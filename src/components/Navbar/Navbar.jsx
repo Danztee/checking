@@ -3,16 +3,26 @@ import { Link, useLocation } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { BsBag } from "react-icons/bs";
 import { TbBell } from "react-icons/tb";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiMenu } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
+import { FaBars } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { Logo } from "../../assets";
-import { ProfileCard, Category } from "../../components";
-import { AiFillCaretDown } from "react-icons/ai";
+import {
+  ProfileCard,
+  Category,
+  Sidebar,
+  IconContainer,
+} from "../../components";
+import { AiFillCaretDown, AiOutlineMenu } from "react-icons/ai";
+import { useVisibility } from "../../hooks/useVisibility";
 
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [profile, setProfile] = useState(false);
   const [category, setCategory] = useState(false);
+  const { isVisible, toggle } = useVisibility();
 
   const handleProfile = () => {
     setProfile(!profile);
@@ -22,13 +32,27 @@ const Navbar = () => {
 
   return (
     <>
+      <Sidebar isVisible={isVisible} toggle={toggle} />
       {pathname !== "/login" && pathname !== "/register" ? (
         <nav className="navbar relative w-full">
           <div className="container-b flex items-center justify-between w-full">
-            <div className="logo">
-              <img src={Logo} alt="" />
+            <div className="flex items-center">
+              <IconContainer
+                className="md:hidden h-8 w-8 mr-3  icon"
+                onClick={() => {
+                  toggle();
+                }}
+                aria-controls="normal-sidebar"
+                aria-expanded={isVisible}
+              >
+                {isVisible ? <IoMdClose /> : <AiOutlineMenu />}
+              </IconContainer>
+
+              <div className="logo-wrapper">
+                <img src={Logo} alt="" />
+              </div>
             </div>
-            <ul className="flex justify-between">
+            <ul className="md:flex hidden justify-between">
               <li>
                 <Link to="/" className="nav-Link-hover">
                   Home
@@ -56,7 +80,7 @@ const Navbar = () => {
                 <Link to="/">About</Link>
               </li>
             </ul>
-            <div className="search flex justify-between items-center">
+            <div className="search hidden md:flex justify-between items-center">
               <button className="mr-1">
                 <FiSearch />
               </button>
@@ -79,7 +103,7 @@ const Navbar = () => {
                   <BsBag className="nav-img" />
                 </i>
               </Link>
-              <Link to="/">
+              <Link to="/" className="hidden md:block">
                 <i className="nav-icon">
                   <TbBell className="nav-img" />
                 </i>

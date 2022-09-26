@@ -4,6 +4,7 @@
   padding: 20px;
   box-shadow: 0px 10px 21px rgba(218, 215, 242, 0.25);
   overflow-y: scroll;
+  z-index: 1111;
 }
 .categories-cont::-webkit-scrollbar {
   width: 40px;
@@ -19,18 +20,13 @@
   border: 19px solid #fcfcfd;
 }
 .cartgos {
-  //   position: absolute;
   background-color: #fcfcfd;
   z-index: 1000;
-  //   top: 110px;
-  //   right: 200px;
   margin: auto;
   border-radius: 10px;
   padding: 10px;
   transform: translateY(-50%);
-  //   opacity: 0;
   transition: 3s ease-in-out;
-  //   display: none;
   animation: 2s cartgos ease-in-out;
 }
 @keyframes cartgos {
@@ -64,12 +60,12 @@
   height: 55px;
   justify-content: space-between;
 }
-.cart-rwo label svg {
+.cart-rwo .tag svg {
   font-size: 24px;
   margin-right: 20px;
 }
 
-.cart-rwo label {
+.cart-rwo .tag {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -79,7 +75,7 @@
 
   color: #1c00ff;
 }
-.cartgos .cart-rwo a label {
+.cartgos .cart-rwo .tag {
   width: 180px;
   display: flex;
   align-items: center;
@@ -87,7 +83,7 @@
   flex-direction: row;
   cursor: pointer;
 }
-.cart-rwo a label span {
+.cart-rwo .tag span {
   font-size: 19px;
   text-transform: capitalize;
   color: #1e06d3;

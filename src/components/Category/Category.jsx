@@ -18,73 +18,53 @@ const Category = () => {
     <div className="cartgos">
       <div className="categories-cont">
         <div className="cart-rwo">
-          <Link to="/">
-            <label htmlFor="" className="label">
-              <MdPhoneIphone />
-              <span>Phone</span>
-            </label>
+          <Link to="/products/phones" className="tag">
+            <MdPhoneIphone />
+            <span>Phone</span>
           </Link>
-          <Link to="/">
-            <label htmlFor="">
-              <TbMoodKid />
-              <span>Kids</span>
-            </label>
+          <Link to="/products" className="tag">
+            <TbMoodKid />
+            <span>Kids</span>
           </Link>
         </div>
         <div className="cart-rwo">
-          <Link to="/">
-            <label htmlFor="">
-              <RiComputerLine />
-              <span>Computing</span>
-            </label>
+          <Link to="/products" className="tag">
+            <RiComputerLine />
+            <span>Computing</span>
           </Link>
-          <Link to="/">
-            <label htmlFor="">
-              <TiShoppingCart />
-              <span>supermarket</span>
-            </label>
+          <Link to="/products" className="tag">
+            <TiShoppingCart />
+            <span>supermarket</span>
           </Link>
         </div>
         <div className="cart-rwo">
-          <Link to="/">
-            <label htmlFor="">
-              <VscPerson />
-              <span>gent</span>
-            </label>
+          <Link to="/products" className="tag">
+            <VscPerson />
+            <span>gent</span>
           </Link>
-          <Link to="/">
-            <label htmlFor="">
-              <BiHomeAlt />
-              <span>Home and Office</span>
-            </label>
+          <Link to="/products" className="tag">
+            <BiHomeAlt />
+            <span>Home and Office</span>
           </Link>
         </div>
         <div className="cart-rwo">
-          <Link to="/">
-            <label htmlFor="">
-              <FaGraduationCap />
-              <span>education</span>
-            </label>
+          <Link to="/products" className="tag">
+            <FaGraduationCap />
+            <span>education</span>
           </Link>
-          <Link to="/">
-            <label htmlFor="">
-              <IoGameControllerOutline />
-              <span>Gaming</span>
-            </label>
+          <Link to="/products" className="tag">
+            <IoGameControllerOutline />
+            <span>Gaming</span>
           </Link>
         </div>
         <div className="cart-rwo">
-          <Link to="/">
-            <label htmlFor="">
-              <IoWomanOutline />
-              <span>ladies</span>
-            </label>
+          <Link to="/products" className="tag">
+            <IoWomanOutline />
+            <span>ladies</span>
           </Link>
-          <Link to="/">
-            <label htmlFor="">
-              <MdSportsHandball />
-              <span>sports</span>
-            </label>
+          <Link to="/products" className="tag">
+            <MdSportsHandball />
+            <span>sports</span>
           </Link>
         </div>
       </div>

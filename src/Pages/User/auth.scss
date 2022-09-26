@@ -3,7 +3,7 @@
   padding: 74px 80px;
 
   @media screen and (max-width: 1188px) {
-    padding: 60px 50px;
+    padding: 60px 20px;
   }
   .text-bg {
     flex: 1;
@@ -68,6 +68,10 @@
     flex: 1;
     margin-top: 128px;
 
+    @media screen and (max-width: 1188px) {
+      margin-top: 24px;
+    }
+
     &-container {
       width: 497.78px;
       height: 733px;
@@ -77,38 +81,49 @@
       box-shadow: 0px 0px 45.5846px rgba(206, 214, 243, 0.25);
       border-radius: 18.2338px;
 
+      @media screen and (max-width: 1200px) {
+        width: 100%;
+        padding: 48px 24px;
+      }
+
       &__nav {
-        display: flex;
-        align-items: center;
         width: 220.63px;
         height: 45.58px;
+        left: 56.52px;
+        top: 76.58px;
+
         background: #e5e8ff;
         border-radius: 43.7612px;
+        transition: all 0.5s ease-in-out;
 
-        .bg-btn {
+        .active {
+          .bg-blue {
+            width: 100.52px;
+            height: 38.29px;
+            left: 116px;
+            top: 3.65px;
+
+            background: #3f51dc;
+            border-radius: 43.3053px;
+            transition-delay: 0.25s;
+          }
+          a {
+            .sign-in {
+              p {
+                color: #ffffff;
+              }
+            }
+          }
         }
 
-        &-item {
-          &.active {
-            width: 119.52px;
-            height: 38.29px;
-            color: #ffffff;
-            background: #3f51dc;
-            border-radius: 43.7612px;
-          }
+        .bg-blue {
+          width: 100.52px;
+          height: 38.29px;
+          left: 6.38px;
+          top: 3.65px;
 
-          a {
-            font-family: "Poppins";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14.5871px;
-            line-height: 22px;
-            // /* identical to box height */
-
-            // display: flex;
-            // align-items: center;
-            // text-align: right;
-          }
+          background: #3f51dc;
+          border-radius: 43.3053px;
         }
       }
 
