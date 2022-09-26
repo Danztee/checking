@@ -1,0 +1,11 @@
+.product-cat {
+  padding-inline: 80px;
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 20px;
+    z-index: 1;
+  }
+}
