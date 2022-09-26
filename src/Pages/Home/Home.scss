@@ -1,93 +1,128 @@
 /* header-section*/
-header {
+.header {
   display: flex;
   justify-content: space-between;
-  height: 596px;
+  height: auto;
+  width: 100%;
   align-items: center;
-  padding: 0 5%;
-}
-header .header-desc {
-  width: 536px;
-  display: flex;
-  flex-direction: column;
-}
-header .header-desc h1 {
-  font-weight: 600;
-  font-size: 52px;
-  line-height: 78px;
-  color: #000000;
+  padding-inline: 80px;
+  margin-top: 28px;
 
-  > span {
-    color: #1c00ff;
-  }
-}
-header .header-desc p {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  color: #c4c4c4;
-  margin-top: -20px;
-}
-header .header-desc .cta12 {
-  margin-top: 70px;
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 350px;
-}
-header .header-desc .cta12 button {
-  width: 157px;
-  height: 52px;
-  left: 1px;
-  bottom: 92px;
-  border-radius: 5px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  transition: all 0.3s ease-in-out;
-}
-
-header .header-desc .cta12 .reg button:hover {
-}
-
-// header .header-desc .cta12 .reg button:hover {
-//   background-color: #1c00ff;
-//   color: hsl(0, 0%, 100%);
-// }
-header .header-desc .cta12 .exp {
-  background: #1c00ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-  svg {
-    font-size: 30px;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: auto;
+    padding-inline: 28px;
+    margin-top: 42px;
   }
 
-  &:hover {
-    background-color: #ffffff;
-    color: #1c00ff;
-    border: 1px solid #1c00ff;
-  }
-}
-header .header-desc .cta12 .reg {
-  background-color: #ffffff;
-  border: 1px solid #1c00ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #1c00ff;
+  &-desc {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 
-  &:hover {
-    background-color: #1c00ff;
-    color: #ffffff;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+
+      padding-right: 96px;
+    }
+
+    @media screen and (max-width: 564px) {
+      padding-right: 0px;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 78px;
+      color: #000000;
+
+      > span {
+        color: #1c00ff;
+      }
+
+      @media screen and (max-width: 1024px) {
+        font-size: 36px;
+        line-height: 52px;
+      }
+
+      @media screen and (max-width: 380px) {
+        font-size: 30px;
+        line-height: 46px;
+      }
+    }
+    p {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      color: #c4c4c4;
+      margin-top: -20px;
+    }
+    .cta12 {
+      margin-top: 70px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 350px;
+
+      @media screen and (max-width: 390px) {
+        width: 100%;
+      }
+
+      button {
+        width: 157px;
+        height: 52px;
+        left: 1px;
+        bottom: 92px;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: all 0.3s ease-in-out;
+
+        @media screen and (max-width: 1024px) {
+          width: 140px;
+          height: 52px;
+          left: 0px;
+          bottom: 0px;
+        }
+      }
+      .exp {
+        background: #1c00ff;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        svg {
+          font-size: 30px;
+        }
+
+        &:hover {
+          background-color: #ffffff;
+          color: #1c00ff;
+          border: 1px solid #1c00ff;
+        }
+      }
+      .reg {
+        background-color: #ffffff;
+        border: 1px solid #1c00ff;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1c00ff;
+
+        &:hover {
+          background-color: #1c00ff;
+          color: #ffffff;
+        }
+      }
+    }
   }
 }
 .header-ill {
@@ -95,9 +130,22 @@ header .header-desc .cta12 .reg {
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 50%;
+  height: 100%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 400px;
+  }
 }
 .header-ill img {
   position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media screen and (max-width: 1024px) {
+    object-fit: contain;
+  }
 }
 .scall-top,
 .scall-botm {
@@ -117,6 +165,17 @@ header .header-desc .cta12 .reg {
   background: #ffffff;
   box-shadow: 0px 10.8598px 20.8841px rgba(189, 189, 189, 0.25);
   border-radius: 8.35366px;
+
+  @media screen and (max-width: 1024px) {
+    width: 174.62px;
+    height: 47.43px;
+    left: 156px;
+  }
+
+  @media screen and (max-width: 564px) {
+    height: 47.43px;
+    left: 80px;
+  }
 }
 .scall-top {
   top: 250px;
@@ -127,6 +186,18 @@ header .header-desc .cta12 .reg {
   background: #ffffff;
   box-shadow: 0px 10.8598px 20.8841px rgba(189, 189, 189, 0.25);
   border-radius: 8.35366px;
+
+  @media screen and (max-width: 1024px) {
+    width: 147.67px;
+    height: 48.51px;
+    top: 180px;
+    left: 100px;
+  }
+
+  @media screen and (max-width: 564px) {
+    height: 48.51px;
+    left: 40px;
+  }
 }
 
 .scall-top span h1,
@@ -137,6 +208,12 @@ header .header-desc .cta12 .reg {
   display: flex;
   align-items: center;
   color: #000000;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 9px;
+    line-height: 14px;
+    text-align: right;
+  }
 }
 .scall-top span h2,
 .scall-botm span h2 {
@@ -146,10 +223,16 @@ header .header-desc .cta12 .reg {
   display: flex;
   align-items: center;
   color: #a3a3a3;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 8px;
+    line-height: 12px;
+
+    text-align: right;
+  }
 }
 
 .header-icon {
-  background-color: #1c00ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,22 +247,33 @@ header .header-desc .cta12 .reg {
   background: #1c00ff;
   border-radius: 500px;
   position: absolute;
-  left: -50px;
+  left: -45px;
   box-shadow: 0px 20.0488px 25.061px rgba(162, 162, 162, 0.25);
+  z-index: 999;
+
+  svg {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
 }
 
 .structure {
   margin-top: 60px;
   width: 100%;
   height: 134px;
-  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
   // box-shadow: 0px 8.93321px 40.1994px rgba(214, 214, 214, 0.25);
   border-radius: 17.8664px;
-  padding: 10px 5%;
+  padding-inline: 80px;
 }
 .structure-cont {
   display: flex;
@@ -242,16 +336,11 @@ header .header-desc .cta12 .reg {
 }
 
 .slide {
-  // margin-top: 40px;
-  // margin-bottom: 40px;
-  // display: flex;
-  // width: 100%;
-  // justify-content: space-between;
-  // height: 200px;
-  // align-items: center;
-  // border-radius: 50px;
-  // padding: 0 5%;
-  // position: relative;
+  padding-inline: 80px;
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: 28px;
+  }
 }
 
 .slide img {
@@ -271,17 +360,24 @@ header .header-desc .cta12 .reg {
 /* design for the top sales section*/
 
 .top-sales {
-  padding: 0 5%;
+  padding-inline: 80px;
 
   .image {
     position: relative;
-    width: 40%;
     height: 100%;
 
-    img {
-      width: 400px;
-      height: 100%;
+    @media screen and (max-width: 1024px) {
+      width: 50%;
     }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: 28px;
   }
 }
 
@@ -341,7 +437,7 @@ header .header-desc .cta12 .reg {
   // margin: 0 5%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 50px 60px;
   //   margin: 0 5%;
   width: 100%;
@@ -353,6 +449,18 @@ header .header-desc .cta12 .reg {
     0px 8px 18px rgba(189, 189, 189, 0.05),
     0px 0px 0px rgba(189, 189, 189, 0.05);
   border-radius: 17.222px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 350px;
+    padding: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 157.96px;
+    padding: 12px 18px;
+  }
 }
 
 .top-sales .top-sales-wright {
@@ -361,6 +469,11 @@ header .header-desc .cta12 .reg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    width: 50%;
+    justify-content: start;
+  }
 }
 .top-sales .top-sales-wright h1 {
   font-family: "Poppins";
@@ -371,6 +484,13 @@ header .header-desc .cta12 .reg {
   /* identical to box height */
 
   letter-spacing: 0.05em;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-bottom: 8px;
+  }
 }
 .top-sales .top-sales-wright span {
   font-weight: 400;
@@ -378,16 +498,30 @@ header .header-desc .cta12 .reg {
   line-height: 25px;
   letter-spacing: 0.05em;
   color: #000000;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 12px;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
 }
 .top-sales .top-sales-wright h2 {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
-  line-height: 58px;
+  line-height: 48px;
   /* identical to box height */
 
   color: #1c00ff;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 12px;
+  }
 }
 .top-sales .top-sales-wright button {
   border: none;
@@ -400,6 +534,13 @@ header .header-desc .cta12 .reg {
   line-height: 24px;
   text-align: center;
   color: #ffffff;
+
+  @media screen and (max-width: 1024px) {
+    width: 92px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 
 .top-sales .top-sales-wright button:hover {
@@ -409,6 +550,11 @@ header .header-desc .cta12 .reg {
 .product-slide-cont {
   width: 160px;
   height: 150px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100px;
+    height: 100px;
+  }
 
   .overlay {
     position: absolute;
@@ -442,6 +588,11 @@ header .header-desc .cta12 .reg {
 
       color: #ffffff;
       opacity: 1;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 10px;
+        line-height: 12px;
+      }
     }
 
     &:hover {
@@ -462,12 +613,24 @@ header .header-desc .cta12 .reg {
   justify-content: center;
   font-size: 50px;
   font-weight: 400;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+  }
 }
 
 .top {
   margin-top: 120px;
   padding: 0 5%;
   margin-bottom: 128px;
+  width: 100%;
+
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   .links {
     a {
@@ -480,30 +643,59 @@ header .header-desc .cta12 .reg {
     }
   }
 
+  .prod::-webkit-scrollbar {
+    width: 1.5em;
+  }
+
   .prod {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 20px;
 
-    align-items: center;
-    justify-content: center;
+    @media screen and (max-width: 640px) {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 32px;
+    }
   }
 }
 
 .popular {
-  padding: 0 5%;
+  padding-inline: 80px;
+  width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: 28px;
+  }
+
+  @media screen and (max-width: 640px) {
+    overflow-x: hidden;
+  }
+}
+
+.pop::-webkit-scrollbar {
+  width: 1.5em;
 }
 
 .pop {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 24px;
-  grid-row-gap: 24px;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 20px;
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: auto;
+    padding-bottom: 32px;
+
+    ::-webkit-scrollbar {
+      width: 1.5em;
+      display: none;
+    }
+  }
 }
 
 /*  become a sales person */
@@ -527,6 +719,15 @@ header .header-desc .cta12 .reg {
       0px 0px 0px rgba(189, 189, 189, 0.05);
     border-radius: 30px;
 
+    @media screen and (max-width: 1024px) {
+      padding: 48px 12px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin-top: 0;
+    }
+
     &-text {
       flex: 1;
       h1 {
@@ -539,6 +740,13 @@ header .header-desc .cta12 .reg {
         /* or 138% */
 
         color: #1c00ff;
+
+        @media screen and (max-width: 1024px) {
+          padding: 0 12px;
+          font-size: 24px;
+          line-height: 35px;
+          text-align: center;
+        }
       }
 
       p {
@@ -552,6 +760,12 @@ header .header-desc .cta12 .reg {
         text-transform: capitalize;
 
         color: #000000;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 14px;
+          line-height: 25px;
+          text-align: center;
+        }
       }
 
       a {
@@ -565,6 +779,12 @@ header .header-desc .cta12 .reg {
           color: #ffffff;
           font-size: 16px;
           font-weight: 400;
+        }
+
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
       }
     }
@@ -606,4 +826,47 @@ header .header-desc .cta12 .reg {
 }
 .sele-product .sele-product-wright button:hover {
   background-color: #1e06d3;
+}
+
+.home {
+  .search {
+    padding-inline: 18px;
+
+    .filter-btn {
+      width: 47px;
+      height: 45px;
+
+      background: #1c00ff;
+      border-radius: 5px;
+    }
+    button {
+      color: #afafaf;
+    }
+
+    &-input {
+      width: 100%;
+      height: 45px;
+
+      background: #ececec;
+      border: 1px solid #dfdfdf;
+      border-radius: 5px;
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+
+      color: #000;
+
+      &::placeholder {
+        color: #afafaf;
+      }
+
+      input {
+        background-color: transparent;
+        width: 100%;
+      }
+    }
+  }
 }
