@@ -10,3 +10,5 @@ export { default as Category } from "./Category/Category";
 export { default as Sidebar } from "./Layout/Sidebar";
 export { default as IconContainer } from "./container/IconContainer";
 export { default as CustomLink } from "./Links/CustomLink";
+export { default as CustomNavLink } from "./Links/CustomNavLink";
+export { default as Side } from "./Layout/Side";
