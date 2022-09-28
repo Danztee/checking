@@ -174,47 +174,47 @@ export const topSellersData = [
 export const navLinkData = [
   {
     name: "Phone and Gadgets",
-    link: "/",
+    link: "/products/phones",
     icon: BsPhone,
   },
   {
     name: "Electronics",
-    link: "/",
+    link: "/products/electronics",
     icon: MdElectricalServices,
   },
   {
     name: "Computing",
-    link: "/",
+    link: "/products/computing",
     icon: RiComputerLine,
   },
   {
     name: "Accessories",
-    link: "/",
+    link: "/products/accessories",
     icon: HiArrowsExpand,
   },
   {
     name: "Gents",
-    link: "/",
+    link: "/products/gents",
     icon: IoShirtOutline,
   },
   {
     name: "Ladies",
-    link: "/",
+    link: "/products/ladies",
     icon: IoWomanOutline,
   },
   {
     name: "Sports",
-    link: "/",
+    link: "/products/sports",
     icon: MdOutlineSportsHandball,
   },
   {
     name: "Kids",
-    link: "/",
+    link: "/products/kids",
     icon: TbMoodKid,
   },
   {
     name: "Others",
-    link: "/",
+    link: "/products/others",
     icon: AiOutlineArrowRight,
   },
 ];
