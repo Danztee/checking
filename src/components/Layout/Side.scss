@@ -1,6 +1,8 @@
 .menu-p {
-  padding-inline: 18px;
-  @media screen and (min-width: 1068px) {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    padding-inline: 18px;
     ul {
       li {
         margin-right: 30px;
