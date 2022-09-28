@@ -1,0 +1,133 @@
+.menu-p {
+  padding-inline: 18px;
+  @media screen and (min-width: 1068px) {
+    ul {
+      li {
+        margin-right: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    ul {
+      li {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    inset: 0 0 0 30%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 30%;
+
+    background-color: #fff;
+    color: #1c00ff;
+    z-index: 100;
+
+    .tog {
+      position: absolute;
+      top: 460px;
+      margin-left: 22px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        margin: 8px 0;
+
+        svg {
+          margin-right: 8px;
+          color: #c4c4c4;
+        }
+
+        a {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          /* identical to box height, or 143% */
+
+          letter-spacing: -0.02em;
+
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  @media screen and (max-width: 767px) {
+    transform: translateX(0%);
+    transition: transform 350ms ease;
+  }
+}
+
+.open {
+  @media screen and (max-width: 767px) {
+    transition: transform 350ms ease;
+    transform: translateX(-100%);
+  }
+}
+
+.notification {
+  width: 20px;
+  height: 20px;
+
+  background: #1c00ff;
+  border-radius: 3.9375px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 26px;
+  /* identical to box height, or 250% */
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+
+.message-container {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  letter-spacing: -0.02em;
+
+  color: #1c00ff;
+
+  border-bottom: 1px solid #eaeaea;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
