@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       {pathname !== "/login" && pathname !== "/register" ? (
         <section className="footer w-full">
-          <footer className="container-b">
+          <footer className="con">
             <div className="subscribe mb-16">
               <h1>Subscribe to get latest stories</h1>
               <div className="flex items-center">
@@ -81,12 +81,12 @@ const Footer = () => {
                   <li>
                     <Link to="/">Shipping & Refund Policies</Link>
                   </li>
-                  <Link to="/">
-                    <li>Whalesale Policy </li>
-                  </Link>
-                  <Link to="/">
-                    <li>Privacy Policy</li>
-                  </Link>
+                  <li>
+                    <Link to="/">Whalesale Policy</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Privacy Policy</Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-colum">
