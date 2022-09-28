@@ -75,7 +75,7 @@ const CategoryCarousel = () => {
     <>
       {" "}
       {width > 640 ? (
-        <div className="carousel my-24 mx-auto">
+        <div className="carousel my-24 mx-auto con">
           <h2 className="text-4xl leading-8 font-semibold mb-12 text-slate-700 text-center hidden md:block">
             Shop by brands
           </h2>
