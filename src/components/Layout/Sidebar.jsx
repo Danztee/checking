@@ -73,7 +73,6 @@ const Sidebar = ({ isVisible, toggle }) => {
             </div>
           </div>
         </div>
-        {isVisible && <div className="sidebar-overlay"></div>}
       </section>
     </>
   );
