@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
