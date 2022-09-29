@@ -28,9 +28,9 @@ const ProductCategory = () => {
       ) : error ? (
         <h2>{error}</h2>
       ) : (
-        <section className="product-cat mt-6">
+        <section className="product-cat pt-14">
           <h1>Home > {category}</h1>
-          <div className="product-cat__container">
+          <div className="product-cat__container mt-12">
             {products.map((product) => (
               <ProductCard
                 key={product._id}
