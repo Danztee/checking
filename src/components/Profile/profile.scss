@@ -80,6 +80,12 @@
     margin-bottom: 30px;
   }
 
+  &-line-2 {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-top: 46px;
+  }
+
   &-menu {
     &-item {
       display: flex;
@@ -93,6 +99,18 @@
           color: #c4c4c4;
         }
       }
+    }
+
+    &-list-item-link {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #737373;
+      /* identical to box height, or 143% */
+
+      letter-spacing: -0.02em;
     }
 
     &-text {
@@ -110,6 +128,14 @@
 
   &-logout {
     margin-top: 85px;
+
+    &-2 {
+      margin-top: 16px;
+
+      svg {
+        color: #c4c4c4;
+      }
+    }
     a {
       display: flex;
 

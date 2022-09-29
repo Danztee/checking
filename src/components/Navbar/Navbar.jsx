@@ -10,7 +10,7 @@ import { FaTimes } from "react-icons/fa";
 import { Logo } from "../../assets";
 import { ProfileCard, Category, Side, IconContainer } from "../../components";
 import { AiFillCaretDown, AiOutlineMenu } from "react-icons/ai";
-import { useVisibility } from "../../hooks/useVisibility";
+import { useVisibility, useWindowSize } from "../../hooks";
 
 import "./Navbar.scss";
 
@@ -18,6 +18,7 @@ const Navbar = () => {
   const [profile, setProfile] = useState(false);
   const [category, setCategory] = useState(false);
   const { isVisible, toggle } = useVisibility();
+  const { width } = useWindowSize();
 
   const handleProfile = () => {
     setProfile(!profile);
@@ -28,7 +29,6 @@ const Navbar = () => {
   return (
     <>
       <Side isVisible={isVisible} toggle={toggle} />
-      {isVisible && <div className="sidebar-overlay"></div>}
       {pathname !== "/login" && pathname !== "/register" ? (
         <div className="sticky top-0 z-50">
           <nav className="navbar w-full sticky">
@@ -92,17 +92,25 @@ const Navbar = () => {
                 <input type="text" placeholder="Search" />
               </div>
               <div className="nav-icons">
-                <button onClick={handleProfile} className="relative">
-                  <i className="nav-icon">
-                    <CgProfile className="nav-img" />
-                  </i>
-                  {profile && (
-                    <ProfileCard
-                      closeHandler={handleProfile}
-                      className={`transition-all ease-in-out duration-500`}
-                    />
-                  )}
-                </button>
+                {width > 768 ? (
+                  <button onClick={handleProfile} className="relative">
+                    <i className="nav-icon">
+                      <CgProfile className="nav-img" />
+                    </i>
+                    {profile && (
+                      <ProfileCard
+                        closeHandler={handleProfile}
+                        className={`transition-all ease-in-out duration-500`}
+                      />
+                    )}
+                  </button>
+                ) : (
+                  <Link to="/profile">
+                    <i className="nav-icon">
+                      <CgProfile className="nav-img" />
+                    </i>
+                  </Link>
+                )}
                 <Link to="/">
                   <i className="nav-icon">
                     <BsBag className="nav-img" />
