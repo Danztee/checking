@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useVisibility = () => {
+const useVisibility = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   function toggle(ref) {
@@ -22,3 +22,5 @@ export const useVisibility = () => {
     toggle,
   };
 };
+
+export default useVisibility;
