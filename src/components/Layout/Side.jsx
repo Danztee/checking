@@ -1,21 +1,27 @@
 import { Logo } from "../../assets";
-import { useVisibility } from "../../hooks/useVisibility";
+import { useWindowSize } from "../../hooks";
 import { IconContainer, CustomNavLink } from "../../components";
 import { IoMdClose } from "react-icons/io";
-import { AiOutlineMenu } from "react-icons/ai";
 import "./Side.scss";
 import { TbMessageCircle } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { navLinkData } from "../../data";
-import { CustomLink } from "../../components";
 
 const Side = (isVisible, toggle) => {
   const visible = isVisible.isVisible;
   const mode = isVisible.toggle;
+  const { width } = useWindowSize();
 
   return (
     <>
-      {visible && <div className="sidebar-overlay"></div>}
+      {visible && width < 768 ? (
+        <div
+          className="sidebar-overlay "
+          onClick={() => {
+            mode();
+          }}
+        />
+      ) : null}
       <section className={`menu-p ${visible ? "close" : "open"}`}>
         <div className="sidebar-header flex justify-between w-full">
           <div className="logo-wrapper">
@@ -36,19 +42,46 @@ const Side = (isVisible, toggle) => {
           <IconContainer>
             <TbMessageCircle />
           </IconContainer>
-          <Link to="/messages" className="nav-link ml-2">
+          <Link
+            to="/messages"
+            className="nav-link ml-2"
+            onClick={() => {
+              mode();
+            }}
+          >
             Live Messages
           </Link>
         </div>
         <div className="flex items-center py-4 nav-link">
-          <Link to="/">Home</Link>
+          <Link
+            to="/"
+            onClick={() => {
+              mode();
+            }}
+          >
+            Home
+          </Link>
         </div>
         <div className="flex items-center justify-between pb-4 nav-link">
-          <Link to="">Notifications</Link>
+          <Link
+            to=""
+            onClick={() => {
+              mode();
+            }}
+          >
+            Notifications
+          </Link>
           <div className="notification">10</div>
         </div>
         <div className="flex items-center pb-4 nav-link">
-          <Link to="">Categories</Link>
+          <Link
+            to=""
+            onClick={() => {
+              mode();
+            }}
+          >
+            Categories
+          </Link>
         </div>
         <ul className={`flex justify-between`}>
           {navLinkData.map((nav, index) => {
@@ -59,7 +92,7 @@ const Side = (isVisible, toggle) => {
                 <IconContainer className="icon">
                   <nav.icon />
                 </IconContainer>
-                <CustomNavLink href={link}>
+                <CustomNavLink href={link} onClick={() => mode()}>
                   <span className="title">{name}</span>
                 </CustomNavLink>
               </li>
