@@ -7,8 +7,9 @@ import {
   ProductDetails,
   Profile,
 } from "./Pages";
+
+import ProductDesc from "./Pages/ProductDesc/ProductDesc";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/products" element={<ProductPage />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path="/productDesc/:Desc" element={<ProductDesc />} />
         </Routes>
         <Footer />
       </div>

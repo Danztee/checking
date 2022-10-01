@@ -7,7 +7,6 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
-
   console.log(productId);
 
   const productDetail = useSelector((state) => state.productDetail);

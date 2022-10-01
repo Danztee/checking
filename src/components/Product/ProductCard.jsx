@@ -72,7 +72,13 @@ const ProductCard = ({
             <button className="product-card-btn-cart">Add to cart</button>
             <Link
               className="product-card-btn-view mt-2.5"
-              to={`/products/${productId}`}
+              to={"/productDesc/:Desc"}
+              state={{
+                img: img,
+                name: name,
+                price: price,
+                productId: productId,
+              }}
             >
               View
             </Link>

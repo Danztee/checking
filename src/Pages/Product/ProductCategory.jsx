@@ -6,12 +6,11 @@ import { ProductCard } from "../../components";
 
 import "./productcat.scss";
 
-const ProductCategory = () => {
+const ProductCategory = (props) => {
   const dispatch = useDispatch();
 
   const pathName = useLocation().pathname;
   const category = pathName.split("/")[2];
-
   console.log(category);
 
   const productCategory = useSelector((state) => state.productCategory);

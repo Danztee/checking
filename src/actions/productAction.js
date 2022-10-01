@@ -27,6 +27,7 @@ import {
   PRODUCT_LATEST_REQUEST,
   PRODUCT_LATEST_SUCCESS,
   PRODUCT_LATEST_FAIL,
+  PRODUCT_VIEW,
 } from "../constants/productConstant";
 
 export const listProducts = () => async (dispatch) => {
@@ -98,3 +99,9 @@ export const listProductDetails = (id) => async (dispatch) => {
     });
   }
 };
+
+export function productView() {
+  return {
+    type: PRODUCT_VIEW,
+  };
+}
